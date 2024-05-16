@@ -1,0 +1,162 @@
+:root {
+    --darkCyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkGrayishBlue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    padding: 1rem;
+    background-color: var(--cream);
+}
+
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.fraunces {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+}
+
+.image {
+    background: url("/images/image-product-mobile.jpg") no-repeat center center / cover;
+    width: 100%;
+    min-height: 15rem;
+    border-radius: .5rem .5rem 0 0;
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    color: var(--darkGrayishBlue);
+    line-height: 1.5;
+}
+
+.name {
+    margin-block-start: 1rem;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+}
+
+.description {
+    color: var(--darkGrayishBlue);
+    margin-block-start: 1rem;
+    letter-spacing: 0.01rem;
+    line-height: 1.5;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-block-start: 2rem;
+}
+
+.price .new-price {
+    color: var(--darkCyan);
+}
+
+.price .old-price {
+    text-decoration: line-through var(--darkGrayishBlue);
+    color: var(--darkGrayishBlue);
+    font-weight: 500;
+}
+
+.btn {
+    width: 100%;
+    margin-block-start: 1.5rem;
+    margin-block-end: .75rem;
+    padding-block: 1.5rem;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--darkCyan);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+    background-color: var(--darkGrayishBlue);
+}
+
+
+
+
+@media screen and (min-width: 48rem) {
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        padding: 4rem;
+    }
+
+    .card {
+        flex-direction: row;
+    }
+
+    .image {
+        background: url("/images/image-product-desktop.jpg") no-repeat center center / cover;
+        min-height: 35rem;
+        border-radius: 0.5rem 0 0 0.5rem;
+        flex: 1;
+    }
+
+    .content {
+        flex: 1;
+        padding: 2rem;
+        width: 50%;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+    
+    .name {
+        font-size: 2.75rem;
+        letter-spacing: 0.02em;
+        width: 75%;
+    }
+    .description {
+        font-size: 1.5rem;
+        margin-block-start: 2rem;
+    }
+    .price .new-price {
+        font-size: 2rem;
+    }
+
+    .price .old-price {
+        font-size: 1.2rem;
+    }
+}
